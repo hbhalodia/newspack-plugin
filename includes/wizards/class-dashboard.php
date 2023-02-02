@@ -78,12 +78,6 @@ class Dashboard extends Wizard {
 				'url'         => Wizards::get_url( 'seo' ),
 				'description' => esc_html__( 'Configure basic SEO settings', 'newspack' ),
 			],
-			[
-				'slug'        => 'connections',
-				'name'        => Wizards::get_name( 'connections' ),
-				'url'         => Wizards::get_url( 'connections' ),
-				'description' => esc_html__( 'Connections to third-party services', 'newspack' ),
-			],
 		];
 
 		return $dashboard;
