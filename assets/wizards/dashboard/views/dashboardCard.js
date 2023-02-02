@@ -11,7 +11,6 @@ import {
 	help,
 	lifesaver,
 	megaphone,
-	payment,
 	postComments,
 	plugins,
 	rss,
@@ -33,7 +32,6 @@ class DashboardCard extends Component {
 		const { name, description, slug, url } = this.props;
 		const iconMap = {
 			'site-design': typography,
-			'reader-revenue': payment,
 			advertising: stretchWide,
 			syndication: rss,
 			analytics: chartBar,
