@@ -13,7 +13,6 @@ import {
 	megaphone,
 	postComments,
 	plugins,
-	rss,
 	search,
 	stretchWide,
 	typography,
@@ -33,7 +32,6 @@ class DashboardCard extends Component {
 		const iconMap = {
 			'site-design': typography,
 			advertising: stretchWide,
-			syndication: rss,
 			analytics: chartBar,
 			seo: search,
 			'health-check': lifesaver,

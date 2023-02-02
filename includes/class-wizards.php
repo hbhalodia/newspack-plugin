@@ -31,7 +31,6 @@ class Wizards {
 			'dashboard'       => new Dashboard(),
 			'site-design'     => new Site_Design_Wizard(),
 			'advertising'     => new Advertising_Wizard(),
-			'syndication'     => new Syndication_Wizard(),
 			'analytics'       => new Analytics_Wizard(),
 			'components-demo' => new Components_Demo(),
 			'seo'             => new SEO_Wizard(),
