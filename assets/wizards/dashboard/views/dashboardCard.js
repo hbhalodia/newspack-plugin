@@ -9,9 +9,6 @@ import { Component } from '@wordpress/element';
 import {
 	chartBar,
 	help,
-	lifesaver,
-	megaphone,
-	postComments,
 	plugins,
 	search,
 	stretchWide,
@@ -34,9 +31,6 @@ class DashboardCard extends Component {
 			advertising: stretchWide,
 			analytics: chartBar,
 			seo: search,
-			'health-check': lifesaver,
-			engagement: postComments,
-			popups: megaphone,
 			support: help,
 			connections: plugins,
 		};
