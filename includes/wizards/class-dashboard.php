@@ -79,12 +79,6 @@ class Dashboard extends Wizard {
 				'description' => esc_html__( 'Configure basic SEO settings', 'newspack' ),
 			],
 			[
-				'slug'        => 'engagement',
-				'name'        => Wizards::get_name( 'engagement' ),
-				'url'         => Wizards::get_url( 'engagement' ),
-				'description' => esc_html__( 'Newsletters, commenting, social, recirculation', 'newspack' ),
-			],
-			[
 				'slug'        => 'popups',
 				'name'        => Wizards::get_name( 'popups' ),
 				'url'         => Wizards::get_url( 'popups' ),

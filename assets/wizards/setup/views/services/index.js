@@ -14,20 +14,10 @@ import apiFetch from '@wordpress/api-fetch';
  * Internal dependencies
  */
 import { withWizardScreen, Wizard, ActionCard, hooks } from '../../../../components/src';
-import { NewspackNewsletters } from '../../../engagement/views/newsletters';
 import GAMOnboarding from '../../../advertising/components/onboarding';
 import './style.scss';
 
 const SERVICES_LIST = {
-	newsletters: {
-		label: __( 'Newsletters', 'newspack' ),
-		description: __(
-			'Create email newsletters and send them to your mail lists, all without leaving your website',
-			'newspack'
-		),
-		Component: NewspackNewsletters,
-		configuration: { is_service_enabled: false },
-	},
 	'google-ad-manager': {
 		label: __( 'Google Ad Manager', 'newspack' ),
 		description: __(
@@ -43,7 +33,6 @@ const Services = ( { renderPrimaryButton } ) => {
 	const [ services, updateServices ] = hooks.useObjectState( SERVICES_LIST );
 	const [ isLoading, setIsLoading ] = useState( true );
 	const slugs = keys( services );
-	const readerRevenueWizardData = Wizard.useWizardData( 'reader-revenue' );
 
 	useEffect( () => {
 		apiFetch( {
