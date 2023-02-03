@@ -147,31 +147,6 @@ final class Recaptcha {
 			$settings[ $key ] = self::get_setting( $key );
 		}
 
-		// Migrate reCAPTCHA settings from Stripe wizard, for more generalized usage.
-		if ( ! $settings['use_captcha'] && empty( $settings['site_key'] ) && empty( $settings['site_secret'] ) ) {
-			$stripe_settings = Stripe_Connection::get_stripe_data();
-			if ( ! empty( $stripe_settings['useCaptcha'] ) && ! empty( $stripe_settings['captchaSiteKey'] ) && ! empty( $stripe_settings['captchaSiteSecret'] ) ) {
-				// If we have all of the required settings in Stripe settings, migrate them here.
-				self::update_settings(
-					[
-						'use_captcha' => $stripe_settings['useCaptcha'],
-						'site_key'    => $stripe_settings['captchaSiteKey'],
-						'site_secret' => $stripe_settings['captchaSiteSecret'],
-					]
-				);
-
-				$settings['use_captcha'] = $stripe_settings['useCaptcha'];
-				$settings['site_key']    = $stripe_settings['captchaSiteKey'];
-				$settings['site_secret'] = $stripe_settings['captchaSiteSecret'];
-
-				// Delete the legacy settings from Stripe settings and apply the settings to the return value.
-				unset( $stripe_settings['useCaptcha'] );
-				unset( $stripe_settings['captchaSiteKey'] );
-				unset( $stripe_settings['captchaSiteSecret'] );
-				Stripe_Connection::update_stripe_data( $stripe_settings );
-			}
-		}
-
 		return $settings;
 	}
 
