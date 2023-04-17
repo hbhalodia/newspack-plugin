@@ -64,6 +64,13 @@ class Perfmatters {
 			'mailchimp-for-wp',
 			// Third-party services.
 			'disqus',
+			'recaptcha',
+			'twitter.com',
+			// Advertising.
+			'googletag.pubads',
+			'adsbygoogle.js',
+			'ai_insert_code',
+			'doubleclick.net',
 		];
 	}
 
@@ -205,6 +212,14 @@ class Perfmatters {
 		$options['lazyload']['lazy_loading_iframes']       = true;
 		$options['lazyload']['youtube_preview_thumbnails'] = true;
 		$options['lazyload']['image_dimensions']           = true;
+
+		// Fonts.
+		if ( ! isset( $options['fonts'] ) ) {
+			$options['fonts'] = [];
+		}
+		$options['fonts']['disable_google_fonts'] = false;
+		$options['fonts']['display_swap']         = true;
+		$options['fonts']['local_google_fonts']   = true;
 
 		return $options;
 	}
